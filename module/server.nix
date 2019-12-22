@@ -82,6 +82,7 @@ in {
                     connection = {
                       type = "ssh";
                       user = "root";
+                      host = "\${ hcloud_server.${configuration.name}.ipv4_address }";
                       private_key = "\${ file(\"${config.provisioner.privateKeyFile}\") }";
                     };
                   }
@@ -95,6 +96,7 @@ in {
                     connection = {
                       type = "ssh";
                       user = "root";
+                      host = "\${ hcloud_server.${configuration.name}.ipv4_address }";
                       private_key = "\${ file(\"${config.provisioner.privateKeyFile}\") }";
                     };
                   }
