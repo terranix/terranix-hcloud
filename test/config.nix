@@ -20,4 +20,6 @@
     };
   };
 
+  hcloud.export.nix = toString ./export.nix;
+
 }
