@@ -18,11 +18,10 @@ To use this module with terranix and terraform version 0.11
 { config, lib, pkgs, ...}:
 let
   hcloud-modules = pkgs.fetchgit{
-    url = "https://git.ingolf-wagner.de/terranix/hcloud.git";
-    rev = "36666629252ebe71cc658da49f5dcc3fa4718396";
-    sha256 = "1r29q19dbzbc79i0zdjrrcxilxiyp74057rrc8qs6v74sv11hail";
+    url = "https://github.com/mrVanDalo/terranix-hcloud.git";
+    rev = "a020c6df7d5b301d561d1612737a4905a18dbdd4";
+    sha256 = "0a3j9s5hljz1065gqrj304p6xj6grklrl8k7jblawx8c34kibd6y";
   };
-
 in
 {
   imports = [
@@ -55,10 +54,10 @@ To use this module with terranix and terraform version 0.12
 { config, lib, pkgs, ...}:
 let
   hcloud-modules = pkgs.fetchgit{
-    url = "https://git.ingolf-wagner.de/terranix/hcloud.git";
-    rev = "af678d11a381394301967dd44bcd6aacd636cd47";
-    sha256 = "0qmd8blr1i12y8gpj1vhch5c722plkyhdkn7n4f268n46dha0bxm";
-  }; 
+    url = "https://github.com/mrVanDalo/terranix-hcloud.git";
+    rev = "c3571f76664e1813f90d97b8c194a1e0149e895e";
+    sha256 = "0plld74wincyy3c5gdfqh78pzrqibxh6r839dm0c717fajr9imwb";
+  };
 in
 {
   imports = [
