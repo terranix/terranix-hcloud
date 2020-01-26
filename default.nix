@@ -1,8 +1,9 @@
 { pkgs, lib, ... }:
 {
   imports = [
-    ./module/server.nix
-    ./module/nixserver.nix
     ./module/export.nix
+    ./module/nixserver.nix
+    ./module/provider.nix
+    ./module/server.nix
   ];
 }

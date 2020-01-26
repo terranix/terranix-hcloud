@@ -7,7 +7,9 @@ in {
     nix = mkOption {
       type = with types; nullOr str;
       description = ''
-        export hcloud information as nix file
+        Export hcloud information as nix file.
+        Useful when if you want to import
+        run a NixOS script after the terraform.
       '';
     };
   };
