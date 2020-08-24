@@ -5,8 +5,8 @@ let
 
   nixosInfect = pkgs.fetchgit {
     "url" = "https://github.com/elitak/nixos-infect.git";
-    "rev" = "6c6e63594dd831a9b0177add82c84a4ebbd6f7af";
-    "sha256" = "0817x7fzqlbbajy1wvkbd9i7mzm2lfzm45w15pc4mbag44bjc0vi";
+    "rev" = "30441b1236a3f5e426b72ecf2ba2f4f91127ca0e";
+    "sha256" = "0k6z4wx8k03psbhm2mzm575z6gas2c6fl2pxpppwamjdvl0gv2an";
   };
 
 in {
