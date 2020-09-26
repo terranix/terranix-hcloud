@@ -6,6 +6,7 @@ in {
   options.hcloud.export = {
     nix = mkOption {
       type = with types; nullOr str;
+      default = null;
       description = ''
         Export hcloud information as nix file.
         Useful when if you want to import
