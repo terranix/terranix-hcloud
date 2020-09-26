@@ -82,7 +82,7 @@ in {
             file.destination = "/root/nixos-infect";
           }
           (optionalAttrs (configuration.configurationFile != null) {
-            file.source = configuration.configurationFile;
+            file.source = toString configuration.configurationFile;
             file.destination = "/etc/nixos_input.nix";
           })
         ] ++ configuration.provisioners ++ [{
