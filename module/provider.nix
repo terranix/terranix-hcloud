@@ -8,7 +8,8 @@ let
 
   default_token = "hcloud_api_token";
 
-in {
+in
+{
 
   options.hcloud = {
     enable = mkEnableOption ''

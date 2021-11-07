@@ -9,7 +9,8 @@ let
     "sha256" = "0k6z4wx8k03psbhm2mzm575z6gas2c6fl2pxpppwamjdvl0gv2an";
   };
 
-in {
+in
+{
 
   options.hcloud.nixserver = mkOption {
     default = { };
@@ -72,36 +73,38 @@ in {
 
   config = mkIf (cfg != { }) {
 
-    hcloud.server = mapAttrs' (name: configuration: {
-      name = "${configuration.name}";
-      value = {
-        inherit (configuration) enable serverType backups name;
-        provisioners = [
-          {
-            file.source = "${nixosInfect}/nixos-infect";
-            file.destination = "/root/nixos-infect";
-          }
-          (optionalAttrs (configuration.configurationFile != null) {
-            file.source = toString configuration.configurationFile;
-            file.destination = "/etc/nixos_input.nix";
-          })
-        ] ++ configuration.provisioners ++ [{
-          remote-exec.inline = [
-            ''
-              NO_REBOOT="dont" \
-              PROVIDER=HCloud \
-              NIX_CHANNEL=${configuration.channel} \
-              ${
-                optionalString (configuration.configurationFile != null)
-                "NIXOS_IMPORT=/etc/nixos_input.nix"
-              } \
-              bash /root/nixos-infect 2>&1 | tee /tmp/infect.log
-            ''
-            "shutdown -r +1"
-          ];
-        }];
-      };
-    }) cfg;
+    hcloud.server = mapAttrs'
+      (name: configuration: {
+        name = "${configuration.name}";
+        value = {
+          inherit (configuration) enable serverType backups name;
+          provisioners = [
+            {
+              file.source = "${nixosInfect}/nixos-infect";
+              file.destination = "/root/nixos-infect";
+            }
+            (optionalAttrs (configuration.configurationFile != null) {
+              file.source = toString configuration.configurationFile;
+              file.destination = "/etc/nixos_input.nix";
+            })
+          ] ++ configuration.provisioners ++ [{
+            remote-exec.inline = [
+              ''
+                NO_REBOOT="dont" \
+                PROVIDER=HCloud \
+                NIX_CHANNEL=${configuration.channel} \
+                ${
+                  optionalString (configuration.configurationFile != null)
+                  "NIXOS_IMPORT=/etc/nixos_input.nix"
+                } \
+                bash /root/nixos-infect 2>&1 | tee /tmp/infect.log
+              ''
+              "shutdown -r +1"
+            ];
+          }];
+        };
+      })
+      cfg;
   };
 
 }

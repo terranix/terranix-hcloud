@@ -6,7 +6,8 @@ let
     ${pkgs.terraform_0_12}/bin/terraform "$@"
   '';
 
-in pkgs.mkShell {
+in
+pkgs.mkShell {
 
   buildInputs = [
 
