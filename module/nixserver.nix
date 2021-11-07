@@ -37,7 +37,7 @@ in {
             '';
           };
           channel = mkOption {
-            default = "nixos-19.09";
+            default = "nixos-21.05";
             type = with types; str;
             description = ''
               nixos channel to install

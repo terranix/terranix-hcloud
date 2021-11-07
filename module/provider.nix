@@ -54,7 +54,9 @@ in {
 
   config = mkMerge [
 
-    (mkIf cfg.enable { provider.hcloud = cfg.provider; })
+    (mkIf cfg.enable {
+      provider.hcloud = cfg.provider;
+    })
 
     (mkIf (cfg.enable && cfg.provider.token == "\${ var.${default_token} }") {
       variable."${default_token}" = {
