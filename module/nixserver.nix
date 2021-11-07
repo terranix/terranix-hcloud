@@ -60,11 +60,25 @@ in
               provisioning by nixos-infect.
             '';
           };
+          location = mkOption {
+            default = null;
+            type = nullOr str;
+            description = ''
+              location where the machine should run.
+            '';
+          };
           provisioners = mkOption {
             default = [ ];
             type = with types; listOf attrs;
             description = ''
               provision steps. see `hcloud.server.provisioners`.
+            '';
+          };
+          extraConfig = mkOption {
+            default = {};
+            type = attrs;
+            description = ''
+              parameter of the hcloud_server which are not covered yet.
             '';
           };
         };
@@ -77,7 +91,7 @@ in
       (name: configuration: {
         name = "${configuration.name}";
         value = {
-          inherit (configuration) enable serverType backups name;
+          inherit (configuration) enable serverType backups name location extraConfig;
           provisioners = [
             {
               file.source = "${nixosInfect}/nixos-infect";

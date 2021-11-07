@@ -3,11 +3,8 @@
 with lib;
 
 let
-
   cfg = config.hcloud;
-
   default_token = "hcloud_api_token";
-
 in
 {
 
@@ -40,16 +37,6 @@ in
           can be used to override the default API Endpoint https://api.hetzner.cloud/v1
         '';
       };
-      # not working
-      #poll_interval = mkOption {
-      #  default = "500ms";
-      #  type = with types; nullOr str;
-      #  description = ''
-      #    Configures the interval in which actions are polled by the client.
-      #    Increase this interval if you run into rate limiting errors.
-      #  '';
-      #  example = "1000ms";
-      #};
     };
   };
 
@@ -57,6 +44,7 @@ in
 
     (mkIf cfg.enable {
       provider.hcloud = cfg.provider;
+      terraform.required_providers.hcloud.source = "hetznercloud/hcloud";
     })
 
     (mkIf (cfg.enable && cfg.provider.token == "\${ var.${default_token} }") {

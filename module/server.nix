@@ -1,12 +1,11 @@
 { config, lib, pkgs, ... }:
 with lib;
+with types;
 let
-
   cfg = config.hcloud.server;
-
-  allAdmins =
-    if (hasAttr "admins" config.users) then config.users.admins else { };
-
+  allAdmins = if (hasAttr "admins" config.users)
+              then config.users.admins
+              else { };
 in
 {
 
@@ -15,7 +14,7 @@ in
     description = ''
       servers deployed to the hcloud.
     '';
-    type = with types;
+    type =
       attrsOf (submodule ({ name, ... }: {
         options = {
           enable = mkEnableOption ''
@@ -23,14 +22,14 @@ in
           '';
           name = mkOption {
             default = "${name}";
-            type = with types; str;
+            type = str;
             description = ''
               name of the server
             '';
           };
           provisioners = mkOption {
             default = [ ];
-            type = with types; listOf attrs;
+            type = listOf attrs;
             description = ''
               provision steps.
 
@@ -50,23 +49,37 @@ in
           };
           image = mkOption {
             default = "ubuntu-18.04";
-            type = with types; str;
+            type = str;
             description = ''
               image to spawn on the server
             '';
           };
           serverType = mkOption {
             default = "cx11";
-            type = with types; str;
+            type = str;
             description = ''
               Hardware equipment. This options influences costs!
             '';
           };
+          location = mkOption {
+            default = null;
+            type = nullOr str;
+            description = ''
+              location where the machine should run.
+            '';
+          };
           backups = mkOption {
             default = false;
-            type = with types; bool;
+            type = bool;
             description = ''
               enable backups or not
+            '';
+          };
+          extraConfig = mkOption {
+            default = {};
+            type = attrs;
+            description = ''
+              parameter of the hcloud_server which are not covered yet.
             '';
           };
         };
@@ -92,6 +105,7 @@ in
               image = configuration.image;
               server_type = configuration.serverType;
               backups = configuration.backups;
+              location = configuration.location;
               ssh_keys = allUsers;
               provisioner = builtins.map
                 (provisioner:
@@ -118,7 +132,7 @@ in
                   } else
                     provisioner)
                 configuration.provisioners;
-            };
+            } // configuration.extraConfig;
           })
           cfg;
       in
