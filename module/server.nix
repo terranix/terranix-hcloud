@@ -3,9 +3,10 @@ with lib;
 with types;
 let
   cfg = config.hcloud.server;
-  allAdmins = if (hasAttr "admins" config.users)
-              then config.users.admins
-              else { };
+  allAdmins =
+    if (hasAttr "admins" config.users)
+    then config.users.admins
+    else { };
 in
 {
 
@@ -76,7 +77,7 @@ in
             '';
           };
           extraConfig = mkOption {
-            default = {};
+            default = { };
             type = attrs;
             description = ''
               parameter of the hcloud_server which are not covered yet.

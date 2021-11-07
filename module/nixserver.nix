@@ -75,7 +75,7 @@ in
             '';
           };
           extraConfig = mkOption {
-            default = {};
+            default = { };
             type = attrs;
             description = ''
               parameter of the hcloud_server which are not covered yet.

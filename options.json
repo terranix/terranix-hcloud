@@ -1,0 +1,448 @@
+{
+  "hcloud.enable": {
+    "declarations": [
+      {
+        "channelPath": "/module/provider.nix",
+        "path": "module/provider.nix",
+        "url": "https://github.com/terranix/terranix-module-hcloud/tree/main/modulemodule/provider.nix"
+      }
+    ],
+    "default": false,
+    "description": "Whether to enable hcloud provider\nSee https://www.terraform.io/docs/providers/hcloud/index.html for documentation.\n.",
+    "example": true,
+    "loc": [
+      "hcloud",
+      "enable"
+    ],
+    "readOnly": false,
+    "type": "boolean"
+  },
+  "hcloud.export.nix": {
+    "declarations": [
+      {
+        "channelPath": "/module/export.nix",
+        "path": "module/export.nix",
+        "url": "https://github.com/terranix/terranix-module-hcloud/tree/main/modulemodule/export.nix"
+      }
+    ],
+    "default": null,
+    "description": "Export hcloud information as nix file.\nUseful when if you want to import\nrun a NixOS script after the terraform.\n",
+    "loc": [
+      "hcloud",
+      "export",
+      "nix"
+    ],
+    "readOnly": false,
+    "type": "null or string"
+  },
+  "hcloud.nixserver": {
+    "declarations": [
+      {
+        "channelPath": "/module/nixserver.nix",
+        "path": "module/nixserver.nix",
+        "url": "https://github.com/terranix/terranix-module-hcloud/tree/main/modulemodule/nixserver.nix"
+      }
+    ],
+    "default": {},
+    "description": "create a nixos server, via nixos-infect.\n",
+    "loc": [
+      "hcloud",
+      "nixserver"
+    ],
+    "readOnly": false,
+    "type": "attribute set of submodules"
+  },
+  "hcloud.nixserver.<name>.backups": {
+    "declarations": [
+      {
+        "channelPath": "/module/nixserver.nix",
+        "path": "module/nixserver.nix",
+        "url": "https://github.com/terranix/terranix-module-hcloud/tree/main/modulemodule/nixserver.nix"
+      }
+    ],
+    "default": false,
+    "description": "enable backups or not\n",
+    "loc": [
+      "hcloud",
+      "nixserver",
+      "<name>",
+      "backups"
+    ],
+    "readOnly": false,
+    "type": "boolean"
+  },
+  "hcloud.nixserver.<name>.channel": {
+    "declarations": [
+      {
+        "channelPath": "/module/nixserver.nix",
+        "path": "module/nixserver.nix",
+        "url": "https://github.com/terranix/terranix-module-hcloud/tree/main/modulemodule/nixserver.nix"
+      }
+    ],
+    "default": "nixos-21.05",
+    "description": "nixos channel to install\n",
+    "loc": [
+      "hcloud",
+      "nixserver",
+      "<name>",
+      "channel"
+    ],
+    "readOnly": false,
+    "type": "string"
+  },
+  "hcloud.nixserver.<name>.configurationFile": {
+    "declarations": [
+      {
+        "channelPath": "/module/nixserver.nix",
+        "path": "module/nixserver.nix",
+        "url": "https://github.com/terranix/terranix-module-hcloud/tree/main/modulemodule/nixserver.nix"
+      }
+    ],
+    "default": null,
+    "description": "The configuration.nix,\nonly used by the initial\nprovisioning by nixos-infect.\n",
+    "loc": [
+      "hcloud",
+      "nixserver",
+      "<name>",
+      "configurationFile"
+    ],
+    "readOnly": false,
+    "type": "null or path"
+  },
+  "hcloud.nixserver.<name>.enable": {
+    "declarations": [
+      {
+        "channelPath": "/module/nixserver.nix",
+        "path": "module/nixserver.nix",
+        "url": "https://github.com/terranix/terranix-module-hcloud/tree/main/modulemodule/nixserver.nix"
+      }
+    ],
+    "default": false,
+    "description": "Whether to enable nixserver.",
+    "example": true,
+    "loc": [
+      "hcloud",
+      "nixserver",
+      "<name>",
+      "enable"
+    ],
+    "readOnly": false,
+    "type": "boolean"
+  },
+  "hcloud.nixserver.<name>.extraConfig": {
+    "declarations": [
+      {
+        "channelPath": "/module/nixserver.nix",
+        "path": "module/nixserver.nix",
+        "url": "https://github.com/terranix/terranix-module-hcloud/tree/main/modulemodule/nixserver.nix"
+      }
+    ],
+    "default": {},
+    "description": "parameter of the hcloud_server which are not covered yet.\n",
+    "loc": [
+      "hcloud",
+      "nixserver",
+      "<name>",
+      "extraConfig"
+    ],
+    "readOnly": false,
+    "type": "attribute set"
+  },
+  "hcloud.nixserver.<name>.location": {
+    "declarations": [
+      {
+        "channelPath": "/module/nixserver.nix",
+        "path": "module/nixserver.nix",
+        "url": "https://github.com/terranix/terranix-module-hcloud/tree/main/modulemodule/nixserver.nix"
+      }
+    ],
+    "default": null,
+    "description": "location where the machine should run.\n",
+    "loc": [
+      "hcloud",
+      "nixserver",
+      "<name>",
+      "location"
+    ],
+    "readOnly": false,
+    "type": "null or string"
+  },
+  "hcloud.nixserver.<name>.name": {
+    "declarations": [
+      {
+        "channelPath": "/module/nixserver.nix",
+        "path": "module/nixserver.nix",
+        "url": "https://github.com/terranix/terranix-module-hcloud/tree/main/modulemodule/nixserver.nix"
+      }
+    ],
+    "default": "nixserver-‹name›",
+    "description": "name of the server\n",
+    "loc": [
+      "hcloud",
+      "nixserver",
+      "<name>",
+      "name"
+    ],
+    "readOnly": false,
+    "type": "string"
+  },
+  "hcloud.nixserver.<name>.provisioners": {
+    "declarations": [
+      {
+        "channelPath": "/module/nixserver.nix",
+        "path": "module/nixserver.nix",
+        "url": "https://github.com/terranix/terranix-module-hcloud/tree/main/modulemodule/nixserver.nix"
+      }
+    ],
+    "default": [],
+    "description": "provision steps. see `hcloud.server.provisioners`.\n",
+    "loc": [
+      "hcloud",
+      "nixserver",
+      "<name>",
+      "provisioners"
+    ],
+    "readOnly": false,
+    "type": "list of attribute sets"
+  },
+  "hcloud.nixserver.<name>.serverType": {
+    "declarations": [
+      {
+        "channelPath": "/module/nixserver.nix",
+        "path": "module/nixserver.nix",
+        "url": "https://github.com/terranix/terranix-module-hcloud/tree/main/modulemodule/nixserver.nix"
+      }
+    ],
+    "default": "cx11",
+    "description": "Hardware equipment.This options influences costs!\n",
+    "loc": [
+      "hcloud",
+      "nixserver",
+      "<name>",
+      "serverType"
+    ],
+    "readOnly": false,
+    "type": "string"
+  },
+  "hcloud.provider.endpoint": {
+    "declarations": [
+      {
+        "channelPath": "/module/provider.nix",
+        "path": "module/provider.nix",
+        "url": "https://github.com/terranix/terranix-module-hcloud/tree/main/modulemodule/provider.nix"
+      }
+    ],
+    "default": null,
+    "description": "Hetzner Cloud API endpoint,\ncan be used to override the default API Endpoint https://api.hetzner.cloud/v1\n",
+    "loc": [
+      "hcloud",
+      "provider",
+      "endpoint"
+    ],
+    "readOnly": false,
+    "type": "null or string"
+  },
+  "hcloud.provider.token": {
+    "declarations": [
+      {
+        "channelPath": "/module/provider.nix",
+        "path": "module/provider.nix",
+        "url": "https://github.com/terranix/terranix-module-hcloud/tree/main/modulemodule/provider.nix"
+      }
+    ],
+    "default": "${ var.hcloud_api_token }",
+    "description": "You need an API token to use the API.\nSign in into the Hetzner Cloud Console choose a project,\ngo to Access → Tokens, and create a new token. Make sure\nto copy the token because it won’t be shown to you again.\nA token is bound to a project, to interact with the API of another\nproject you have to create a new token inside the project\n\nIf you use a variable you can set it via the environment variable\nTF_VAR_hcloud_api_token.\n",
+    "loc": [
+      "hcloud",
+      "provider",
+      "token"
+    ],
+    "readOnly": false,
+    "type": "string"
+  },
+  "hcloud.server": {
+    "declarations": [
+      {
+        "channelPath": "/module/server.nix",
+        "path": "module/server.nix",
+        "url": "https://github.com/terranix/terranix-module-hcloud/tree/main/modulemodule/server.nix"
+      }
+    ],
+    "default": {},
+    "description": "servers deployed to the hcloud.\n",
+    "loc": [
+      "hcloud",
+      "server"
+    ],
+    "readOnly": false,
+    "type": "attribute set of submodules"
+  },
+  "hcloud.server.<name>.backups": {
+    "declarations": [
+      {
+        "channelPath": "/module/server.nix",
+        "path": "module/server.nix",
+        "url": "https://github.com/terranix/terranix-module-hcloud/tree/main/modulemodule/server.nix"
+      }
+    ],
+    "default": false,
+    "description": "enable backups or not\n",
+    "loc": [
+      "hcloud",
+      "server",
+      "<name>",
+      "backups"
+    ],
+    "readOnly": false,
+    "type": "boolean"
+  },
+  "hcloud.server.<name>.enable": {
+    "declarations": [
+      {
+        "channelPath": "/module/server.nix",
+        "path": "module/server.nix",
+        "url": "https://github.com/terranix/terranix-module-hcloud/tree/main/modulemodule/server.nix"
+      }
+    ],
+    "default": false,
+    "description": "Whether to enable really deploy server\n.",
+    "example": true,
+    "loc": [
+      "hcloud",
+      "server",
+      "<name>",
+      "enable"
+    ],
+    "readOnly": false,
+    "type": "boolean"
+  },
+  "hcloud.server.<name>.extraConfig": {
+    "declarations": [
+      {
+        "channelPath": "/module/server.nix",
+        "path": "module/server.nix",
+        "url": "https://github.com/terranix/terranix-module-hcloud/tree/main/modulemodule/server.nix"
+      }
+    ],
+    "default": {},
+    "description": "parameter of the hcloud_server which are not covered yet.\n",
+    "loc": [
+      "hcloud",
+      "server",
+      "<name>",
+      "extraConfig"
+    ],
+    "readOnly": false,
+    "type": "attribute set"
+  },
+  "hcloud.server.<name>.image": {
+    "declarations": [
+      {
+        "channelPath": "/module/server.nix",
+        "path": "module/server.nix",
+        "url": "https://github.com/terranix/terranix-module-hcloud/tree/main/modulemodule/server.nix"
+      }
+    ],
+    "default": "ubuntu-18.04",
+    "description": "image to spawn on the server\n",
+    "loc": [
+      "hcloud",
+      "server",
+      "<name>",
+      "image"
+    ],
+    "readOnly": false,
+    "type": "string"
+  },
+  "hcloud.server.<name>.location": {
+    "declarations": [
+      {
+        "channelPath": "/module/server.nix",
+        "path": "module/server.nix",
+        "url": "https://github.com/terranix/terranix-module-hcloud/tree/main/modulemodule/server.nix"
+      }
+    ],
+    "default": null,
+    "description": "location where the machine should run.\n",
+    "loc": [
+      "hcloud",
+      "server",
+      "<name>",
+      "location"
+    ],
+    "readOnly": false,
+    "type": "null or string"
+  },
+  "hcloud.server.<name>.name": {
+    "declarations": [
+      {
+        "channelPath": "/module/server.nix",
+        "path": "module/server.nix",
+        "url": "https://github.com/terranix/terranix-module-hcloud/tree/main/modulemodule/server.nix"
+      }
+    ],
+    "default": "‹name›",
+    "description": "name of the server\n",
+    "loc": [
+      "hcloud",
+      "server",
+      "<name>",
+      "name"
+    ],
+    "readOnly": false,
+    "type": "string"
+  },
+  "hcloud.server.<name>.provisioners": {
+    "declarations": [
+      {
+        "channelPath": "/module/server.nix",
+        "path": "module/server.nix",
+        "url": "https://github.com/terranix/terranix-module-hcloud/tree/main/modulemodule/server.nix"
+      }
+    ],
+    "default": [],
+    "description": "provision steps.\n\n`file` and `remote-exec` steps\nautomatically get the connection\npart setup, if you configure\nthe `provisioner.privateKeyFile`\nparameter.\n",
+    "example": [
+      {
+        "file": {
+          "destination": "/root/.zshrc",
+          "source": "~/.zshrc"
+        }
+      },
+      {
+        "remote-exec": {
+          "inline": [
+            "shutdown -r +1"
+          ]
+        }
+      }
+    ],
+    "loc": [
+      "hcloud",
+      "server",
+      "<name>",
+      "provisioners"
+    ],
+    "readOnly": false,
+    "type": "list of attribute sets"
+  },
+  "hcloud.server.<name>.serverType": {
+    "declarations": [
+      {
+        "channelPath": "/module/server.nix",
+        "path": "module/server.nix",
+        "url": "https://github.com/terranix/terranix-module-hcloud/tree/main/modulemodule/server.nix"
+      }
+    ],
+    "default": "cx11",
+    "description": "Hardware equipment. This options influences costs!\n",
+    "loc": [
+      "hcloud",
+      "server",
+      "<name>",
+      "serverType"
+    ],
+    "readOnly": false,
+    "type": "string"
+  }
+}
