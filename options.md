@@ -179,7 +179,7 @@ TF_VAR_hcloud_api_token.
 <li>
   <b><u>hcloud.server.&lt;name&gt;.image</u></b><br>
   <b>type</b>: string<br>
-  <b>default</b>: &#34;ubuntu-18.04&#34;<br>
+  <b>default</b>: &#34;ubuntu-22.04&#34;<br>
   <b>example</b>: null<br>
   <b>defined</b>: <a href="https://github.com/terranix/terranix-module-hcloud/tree/main/modulemodule/server.nix">module/server.nix</a><br>
   <b>description</b>: image to spawn on the server
