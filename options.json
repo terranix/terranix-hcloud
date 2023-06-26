@@ -343,7 +343,7 @@
         "url": "https://github.com/terranix/terranix-module-hcloud/tree/main/modulemodule/server.nix"
       }
     ],
-    "default": "ubuntu-18.04",
+    "default": "ubuntu-22.04",
     "description": "image to spawn on the server\n",
     "loc": [
       "hcloud",

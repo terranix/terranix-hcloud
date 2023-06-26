@@ -49,7 +49,7 @@ in
             ];
           };
           image = mkOption {
-            default = "ubuntu-18.04";
+            default = "ubuntu-22.04";
             type = str;
             description = ''
               image to spawn on the server
