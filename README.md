@@ -3,7 +3,7 @@ An opinionated hcloud
 [terranix](https://terranix.org/)
 module you can use.
 
-NixOS Wiki article ["Install NixOS on Hetzner Cloud" for context](https://nixos.wiki/wiki/Install_NixOS_on_Hetzner_Cloud)
+NixOS Wiki article ["Install NixOS on Hetzner Cloud" for context](https://wiki.nixos.org/wiki/Install_NixOS_on_Hetzner_Cloud)
 
 [Options](./options.md) 
 provided by this module, are documented in 
